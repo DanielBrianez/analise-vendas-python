@@ -46,14 +46,14 @@ df["Unit_Price"] = pd.to_numeric(
     errors="coerce"
 )
 
-# valores_invalidos = df["Unit_Price"].isna().sum()
+valores_invalidos = df["Unit_Price"].isna().sum()
 
 # print("\n=== VALORES INVÁLIDOS EM Unit_Price ===")
 # print(valores_invalidos)
 
-# media_unit_price = df["Unit_Price"].mean()
+media_unit_price = df["Unit_Price"].mean()
 
-# df["Unit_Price"] = df["Unit_Price"].fillna(media_unit_price)
+df["Unit_Price"] = df["Unit_Price"].fillna(media_unit_price)
 
 # print("\n=== VALORES NULOS APÓS TRATAMENTO ===")
 # print(df["Unit_Price"].isna().sum())
@@ -110,11 +110,6 @@ ranking_vendas = (
 
 # print("\n=== RANKING DE VENDAS POR VENDEDOR E CATEGORIA ===")
 # print(ranking_vendas)
-
-
-# ============================================================
-# 6. EXPORTAÇÃO DOS RESULTADOS
-# ============================================================
 
 # ============================================================
 # 6. EXPORTAÇÃO DOS RESULTADOS EM MÚLTIPLAS ABAS
