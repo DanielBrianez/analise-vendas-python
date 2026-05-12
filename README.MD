@@ -18,6 +18,7 @@ This project simulates a real-world data analysis workflow, including:
 
 - Python
 - Pandas
+- Matplotlib
 - OpenPyXL
 - Excel
 
@@ -39,27 +40,28 @@ sales-analysis-python/
 # 📊 Features
 
 ## ✔ Data Import
-
 Reads sales data directly from an Excel file using Pandas.
 
 ## ✔ Data Cleaning
-
-* Converts inconsistent values to numeric
-* Handles invalid data using `errors="coerce"`
-* Replaces missing values (`NaN`) with the column average
+- Converts inconsistent values to numeric
+- Handles invalid data using `errors="coerce"`
+- Replaces missing values (`NaN`) with the column average
 
 ## ✔ Exploratory Data Analysis (EDA)
-
 Performs:
-
-* Sales aggregation
-* Grouping and filtering
-* Ranking analysis
-* Category analysis
+- Sales aggregation
+- Grouping and filtering
+- Ranking analysis
+- Category analysis
 
 ## ✔ Automated Reporting
+Exports processed data into structured Excel reports.
 
-Exports processed data into a structured Excel report with multiple sheets.
+## ✔ Data Visualization
+Generates automated sales charts using Matplotlib.
+
+## ✔ Image Export
+Automatically saves generated charts as PNG images.
 
 ---
 
@@ -89,12 +91,13 @@ Creates a ranking by:
 
 ---
 
-# 📤 Generated Report
+# 📤 Generated Files
 
-The script automatically creates:
+The project automatically generates:
 
 ```bash
 relatorio_vendas.xlsx
+grafico_vendas.png
 ```
 
 Containing:
@@ -102,6 +105,7 @@ Containing:
 * Total Sales by Sales Rep
 * Average Sales by Category
 * Sales Ranking
+* Charts containing comparison between sales representatives
 
 ---
 

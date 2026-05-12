@@ -9,6 +9,7 @@
 # ============================================================
 
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 # ============================================================
@@ -115,25 +116,67 @@ ranking_vendas = (
 # 6. EXPORTAÇÃO DOS RESULTADOS EM MÚLTIPLAS ABAS
 # ============================================================
 
-ARQUIVO_SAIDA = "relatorio_vendas.xlsx"
+# ARQUIVO_SAIDA = "relatorio_vendas.xlsx"
 
-with pd.ExcelWriter(ARQUIVO_SAIDA, engine="openpyxl") as writer:
-    total_por_vendedor.to_excel(
-        writer,
-        sheet_name="Total por Vendedor",
-        index=False
+# with pd.ExcelWriter(ARQUIVO_SAIDA, engine="openpyxl") as writer:
+#     total_por_vendedor.to_excel(
+#         writer,
+#         sheet_name="Total por Vendedor",
+#         index=False
+#     )
+
+#     media_por_categoria.to_excel(
+#         writer,
+#         sheet_name="Media por Categoria",
+#         index=False
+#     )
+
+#     ranking_vendas.to_excel(
+#         writer,
+#         sheet_name="Ranking Vendas",
+#         index=False
+#     )
+
+# print(f"\nRelatório exportado com sucesso: {ARQUIVO_SAIDA}")
+
+# ============================================================
+# 7. VISUALIZAÇÃO DOS DADOS
+# ============================================================
+
+plt.figure(figsize=(10, 6))
+
+barras = plt.bar(
+    total_por_vendedor["Sales_Rep"],
+    total_por_vendedor["Sales_Amount"]
+)
+
+plt.title(
+    "Total de Vendas por Vendedor",
+    fontsize=16
+)
+
+plt.xlabel(
+    "Vendedor",
+    fontsize=12
+)
+
+plt.ylabel(
+    "Valor de Vendas",
+    fontsize=12
+)
+
+for barra in barras:
+    altura = barra.get_height()
+
+    plt.text(
+        barra.get_x() + barra.get_width() / 2,
+        altura,
+        f'R$ {altura:,.0f}',
+        ha='center',
+        va='bottom'
     )
 
-    media_por_categoria.to_excel(
-        writer,
-        sheet_name="Media por Categoria",
-        index=False
-    )
+plt.tight_layout()
 
-    ranking_vendas.to_excel(
-        writer,
-        sheet_name="Ranking Vendas",
-        index=False
-    )
-
-print(f"\nRelatório exportado com sucesso: {ARQUIVO_SAIDA}")
+plt.savefig("grafico_vendas.png")
+plt.show()
