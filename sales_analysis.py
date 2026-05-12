@@ -8,10 +8,11 @@
 # - Exportar o resultado para um novo arquivo Excel
 # ============================================================
 
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
+os.makedirs("graficos", exist_ok=True)
 # ============================================================
 # 1. LEITURA DA BASE DE DADOS
 # ============================================================
@@ -71,6 +72,19 @@ total_por_vendedor = (
     .reset_index()
 )
 
+vendas_por_canal = (
+    df.groupby("Sales_Channel")["Sales_Amount"]
+    .sum()
+    .reset_index()
+)
+
+vendas_por_categoria = (
+    df.groupby("Product_Category")["Sales_Amount"]
+    .sum()
+    .sort_values(ascending=False)
+    .reset_index()
+)
+
 media_por_categoria = (
     df.groupby("Product_Category")["Sales_Amount"]
     .mean()
@@ -91,7 +105,6 @@ ranking_vendas = (
     .sort_values(ascending=False)
     .reset_index()
 )
-
 
 # ============================================================
 # 5. RESULTADOS NO TERMINAL
@@ -143,6 +156,7 @@ ranking_vendas = (
 # 7. VISUALIZAÇÃO DOS DADOS
 # ============================================================
 
+# Gráfico de vendas por vendedor
 plt.figure(figsize=(10, 6))
 
 barras = plt.bar(
@@ -178,5 +192,63 @@ for barra in barras:
 
 plt.tight_layout()
 
-plt.savefig("grafico_vendas.png")
-plt.show()
+plt.savefig("graficos/grafico_vendas.png", dpi=300)
+plt.close()
+
+# Gráfico de vendas por categoria
+plt.figure(figsize=(10, 6))
+
+barras = plt.bar(
+    vendas_por_categoria["Product_Category"],
+    vendas_por_categoria["Sales_Amount"]
+)
+
+plt.title(
+    "Total de Vendas por Categoria",
+    fontsize=16
+)
+
+plt.xlabel(
+    "Categoria",
+    fontsize=12
+)
+
+plt.ylabel(
+    "Valor de Vendas",
+    fontsize=12
+)
+
+for barra in barras:
+    altura = barra.get_height()
+
+    plt.text(
+        barra.get_x() + barra.get_width() / 2,
+        altura,
+        f'R$ {altura:,.0f}',
+        ha='center',
+        va='bottom'
+    )
+
+plt.tight_layout()
+
+plt.savefig("graficos/grafico_categoria.png", dpi=300)
+plt.close()
+
+# Gráfico de participação por canal de venda
+plt.figure(figsize=(8, 8))
+
+plt.pie(
+    vendas_por_canal["Sales_Amount"],
+    labels=vendas_por_canal["Sales_Channel"],
+    autopct='%1.1f%%'
+)
+
+plt.title(
+    "Participação por Canal de Venda",
+    fontsize=16
+)
+
+plt.tight_layout()
+
+plt.savefig("graficos/grafico_canais.png", dpi=300)
+plt.close()

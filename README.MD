@@ -1,7 +1,7 @@
 ````md
 # 📊 Sales Data Analysis with Python & Pandas
 
-Automated sales analysis project developed using Python and Pandas.
+End-to-end sales data analysis project developed with Python, Pandas and Matplotlib, featuring data cleaning, exploratory data analysis (EDA), automated chart generation and sales insights extraction.
 
 This project simulates a real-world data analysis workflow, including:
 
@@ -29,11 +29,17 @@ This project simulates a real-world data analysis workflow, including:
 ```bash
 sales-analysis-python/
 │
+├── graficos/
+│   ├── grafico_vendas.png
+│   ├── grafico_categoria.png
+│   └── grafico_canais.png
+│
 ├── sales_analysis.py
 ├── sales_data.xlsx
 ├── relatorio_vendas.xlsx
-└── README.md
-````
+├── README.md
+├── LICENSE
+```
 
 ---
 
@@ -97,7 +103,9 @@ The project automatically generates:
 
 ```bash
 relatorio_vendas.xlsx
-grafico_vendas.png
+graficos/grafico_vendas.png
+graficos/grafico_categoria.png
+graficos/grafico_canais.png
 ```
 
 Containing:
@@ -117,6 +125,8 @@ Containing:
 * Data Validation
 * Report Automation
 * Python for Data Analytics
+* Data Visualization
+* Pipeline Organization
 
 ---
 
@@ -138,11 +148,11 @@ py sales_analysis.py
 
 # 📌 Future Improvements
 
-* Data visualization with Matplotlib
+* Advanced visualizations with Matplotlib
 * Interactive dashboards
 * SQL integration
 * API consumption
-* Automated insights generation
+* Automated insights generationv
 
 ---
 
