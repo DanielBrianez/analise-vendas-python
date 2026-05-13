@@ -156,7 +156,11 @@ ranking_vendas = (
 # 7. VISUALIZAÇÃO DOS DADOS
 # ============================================================
 
-# Gráfico de vendas por vendedor
+
+# ============================================================
+# GRÁFICO DE VENDAS POR VENDEDOR
+# ============================================================
+
 plt.figure(figsize=(10, 6))
 
 barras = plt.bar(
@@ -192,10 +196,18 @@ for barra in barras:
 
 plt.tight_layout()
 
-plt.savefig("graficos/grafico_vendas.png", dpi=300)
+plt.savefig(
+    "graficos/grafico_vendas.png",
+    dpi=300
+)
+
 plt.close()
 
-# Gráfico de vendas por categoria
+
+# ============================================================
+# GRÁFICO DE VENDAS POR CATEGORIA
+# ============================================================
+
 plt.figure(figsize=(10, 6))
 
 barras = plt.bar(
@@ -231,10 +243,18 @@ for barra in barras:
 
 plt.tight_layout()
 
-plt.savefig("graficos/grafico_categoria.png", dpi=300)
+plt.savefig(
+    "graficos/grafico_categoria.png",
+    dpi=300
+)
+
 plt.close()
 
-# Gráfico de participação por canal de venda
+
+# ============================================================
+# GRÁFICO DE PARTICIPAÇÃO POR CANAL DE VENDA
+# ============================================================
+
 plt.figure(figsize=(8, 8))
 
 plt.pie(
@@ -250,5 +270,9 @@ plt.title(
 
 plt.tight_layout()
 
-plt.savefig("graficos/grafico_canais.png", dpi=300)
+plt.savefig(
+    "graficos/grafico_canais.png",
+    dpi=300
+)
+
 plt.close()

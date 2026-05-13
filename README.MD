@@ -21,6 +21,7 @@ This project simulates a real-world data analysis workflow, including:
 - Matplotlib
 - OpenPyXL
 - Excel
+- SQLite
 
 ---
 
@@ -32,10 +33,13 @@ sales-analysis-python/
 ├── graficos/
 │   ├── grafico_vendas.png
 │   ├── grafico_categoria.png
-│   └── grafico_canais.png
+│   ├── grafico_canais.png
+│   └── sql_total_vendas_por_vendedor.png
 │
 ├── sales_analysis.py
+├── sales_sql_analysis.py
 ├── sales_data.xlsx
+├── sales.db
 ├── relatorio_vendas.xlsx
 ├── README.md
 ├── LICENSE
@@ -106,6 +110,8 @@ relatorio_vendas.xlsx
 graficos/grafico_vendas.png
 graficos/grafico_categoria.png
 graficos/grafico_canais.png
+graficos/sql_total_vendas_por_vendedor.png
+sales.db
 ```
 
 Containing:
@@ -127,6 +133,8 @@ Containing:
 * Python for Data Analytics
 * Data Visualization
 * Pipeline Organization
+* SQL and SQLite Integration
+* Data Pipelines
 
 ---
 
@@ -150,9 +158,9 @@ py sales_analysis.py
 
 * Advanced visualizations with Matplotlib
 * Interactive dashboards
-* SQL integration
+* Advanced SQL queries
 * API consumption
-* Automated insights generationv
+* Automated report generation
 
 ---
 
