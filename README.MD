@@ -1,16 +1,17 @@
 ````md
-# 📊 Sales Data Analysis with Python & Pandas
+# 📊 Sales Data Analysis Pipeline with Python, SQL and Pandas
 
 End-to-end sales data analysis project developed with Python, Pandas and Matplotlib, featuring data cleaning, exploratory data analysis (EDA), automated chart generation and sales insights extraction.
 
-This project simulates a real-world data analysis workflow, including:
+This project simulates a real-world data analysis pipeline, including:
 
 - Data extraction from Excel
 - Data cleaning and preprocessing
-- Handling invalid and missing values
 - Exploratory Data Analysis (EDA)
-- Sales ranking generation
-- Automated Excel report export
+- Automated chart generation
+- SQLite database integration
+- SQL-based analysis
+- Automated report generation
 
 ---
 
@@ -73,6 +74,8 @@ Generates automated sales charts using Matplotlib.
 ## ✔ Image Export
 Automatically saves generated charts as PNG images.
 
+## ✔ SQL Integration
+Stores and analyzes data using SQLite and SQL queries.
 ---
 
 # 📈 Analyses Performed
@@ -116,10 +119,11 @@ sales.db
 
 Containing:
 
-* Total Sales by Sales Rep
-* Average Sales by Category
-* Sales Ranking
-* Charts containing comparison between sales representatives
+- Sales analysis reports
+- Sales rankings
+- Automated visualizations
+- SQL analysis outputs
+- SQLite database file
 
 ---
 
@@ -143,7 +147,7 @@ Containing:
 ## Install dependencies
 
 ```bash
-pip install pandas openpyxl
+pip install pandas matplotlib openpyxl
 ```
 
 ## Run the project
@@ -159,7 +163,7 @@ py sales_analysis.py
 * Advanced visualizations with Matplotlib
 * Interactive dashboards
 * Advanced SQL queries
-* API consumption
+* API integration with automated pipelines
 * Automated report generation
 
 ---
